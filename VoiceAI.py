@@ -2,6 +2,8 @@ from tkinter import *
 from PIL import Image, ImageTk
 from tkinter import ttk
 from tkinter import filedialog
+import speech_recognition
+import pyttsx3
 
 root = Tk()
 root.geometry('900x700')
@@ -43,6 +45,43 @@ def func():
     Label(top, text ="Please insert your pre-recorded audio here").pack()
     Label.place(x=100,y=100)
 
+def recording():
+    robot_mouth = pyttsx3.init()
+    robot_ear = speech_recognition.Recognizer()
+
+    while True:
+        with speech_recognition.Microphone() as mic:
+            print("AI Recognition: I'm listening")
+            audio = robot_ear.listen(mic)
+
+        try:
+            user = robot_ear.recognize_google(audio)  
+        except:
+            user = ""
+
+        print("User: " + user)
+
+        if user == "" :
+            robot_brain = "I can't hear you, please try again!"
+        elif "hello" in user:
+            robot_brain = "Hello User"
+        elif "read" in user:
+            robot_brain = "This is Tug Alpha. Yes, I read you"
+        elif "VTS" in user:
+            robot_brain = "Ship A, this is Melbourne VTS, go ahead"
+        elif "bye" in user:
+            robot_brain = "Bye!"
+            print("AI Recognition: " + robot_brain)
+            robot_mouth.say(robot_brain)
+            robot_mouth.runAndWait()
+            break
+
+    
+        print("AI Recognition: " + robot_brain)
+        robot_mouth.say(robot_brain)
+        robot_mouth.runAndWait()
+
+
 #FAQ Button
 img1 = PhotoImage(file = 'button.png')
 button1 = Button(root,image = img1,border=100,command = openNewWindow)
@@ -57,7 +96,7 @@ button2.place(x=100, y=10)
 
 #record button
 img3 = PhotoImage(file = 'record.png')
-button3 = Button(root,image = img3,border=00)
+button3 = Button(root,image = img3,border=00, command = recording)
 button3.place(x=10, y=10)
 
 #FIle Browser Icon
