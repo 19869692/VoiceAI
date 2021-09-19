@@ -45,16 +45,33 @@ def func():
     Label(top, text ="Please insert your pre-recorded audio here").pack()
     Label.place(x=100,y=100)
 
+def chatLog():
+    chatBox = Toplevel()
+    chatBox.title('Chat Log')
+    chatBox.geometry("300x500")
+    extract = Button(chatBox, text = 'Extract')
+    extract.place(x = 125, y = 450)
+    txt = Text(chatBox, height=27)
+    txt.grid(row=1, column=0, columnspan=1)
+    txt.insert(END ,"User: Tug Alpha, pull 50%\n")
+    txt.insert(END ,"\nAI: Tug Alpha is now at 50% power\n")
+    txt.insert(END ,"\nUser: Tug Alpha, push Full Power\n")
+    txt.insert(END ,"\nAI: Tug Alpha is now at Full Power\n")
+    txt.insert(END ,"\nUser: sdvezxv\n")
+    txt.insert(END ,"\nAI: Tug Alpha, could you please \nrepeat that again?\n")
+    txt.config(state=DISABLED)
+    
 
 #FAQ Button
 img1 = PhotoImage(file = 'button.png')
-button1 = Button(root,image = img1,border=100,command = openNewWindow)
-button1.place(x=680, y=630)
+button1 = Button(root,image = img1,border=2,command = openNewWindow, justify = 'right')
+button1.place(x=770, y=630)
+
 
 
 #Chat Log
 img2 = PhotoImage(file = 'chatlog.png')
-button2 = Button(root,image = img2,border=0)
+button2 = Button(root,image = img2,border=0, command = chatLog)
 button2.place(x=100, y=10)
 
 
@@ -70,8 +87,8 @@ button4.place(x=10, y=630)
 
 #logo but used as a buttons
 img5 = PhotoImage(file = 'logo111.png')
-button5 = Button(root,image = img5,bd=0)
-button5.place(x=680, y=10)
+labelLogo = Label(root, image = img5)
+labelLogo.place(x=680, y=10)
 
 
 root.mainloop()
