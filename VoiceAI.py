@@ -45,42 +45,6 @@ def func():
     Label(top, text ="Please insert your pre-recorded audio here").pack()
     Label.place(x=100,y=100)
 
-def recording():
-    robot_mouth = pyttsx3.init()
-    robot_ear = speech_recognition.Recognizer()
-
-    while True:
-        with speech_recognition.Microphone() as mic:
-            print("AI Recognition: I'm listening")
-            audio = robot_ear.listen(mic)
-
-        try:
-            user = robot_ear.recognize_google(audio)  
-        except:
-            user = ""
-
-        print("User: " + user)
-
-        if user == "" :
-            robot_brain = "I can't hear you, please try again!"
-        elif "hello" in user:
-            robot_brain = "Hello User"
-        elif "read" in user:
-            robot_brain = "This is Tug Alpha. Yes, I read you"
-        elif "VTS" in user:
-            robot_brain = "Ship A, this is Melbourne VTS, go ahead"
-        elif "bye" in user:
-            robot_brain = "Bye!"
-            print("AI Recognition: " + robot_brain)
-            robot_mouth.say(robot_brain)
-            robot_mouth.runAndWait()
-            break
-
-    
-        print("AI Recognition: " + robot_brain)
-        robot_mouth.say(robot_brain)
-        robot_mouth.runAndWait()
-
 
 #FAQ Button
 img1 = PhotoImage(file = 'button.png')
@@ -96,7 +60,7 @@ button2.place(x=100, y=10)
 
 #record button
 img3 = PhotoImage(file = 'record.png')
-button3 = Button(root,image = img3,border=00, command = recording)
+button3 = Button(root,image = img3,border=00)
 button3.place(x=10, y=10)
 
 #FIle Browser Icon
@@ -104,7 +68,7 @@ img4 = PhotoImage(file = 'folder.png')
 button4 = Button(root,image = img4,border=00,command = func)
 button4.place(x=10, y=630)
 
-#logo but used as a button
+#logo but used as a buttons
 img5 = PhotoImage(file = 'logo111.png')
 button5 = Button(root,image = img5,bd=0)
 button5.place(x=680, y=10)
