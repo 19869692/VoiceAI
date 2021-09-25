@@ -21,8 +21,6 @@ while True:
     
     print("User: " + user)
 
-#    if names in user:
-#        robot_brain = "This is " + names + ", could you repeat that?"
     if "hello" in user:
         robot_brain = "Hello user"
         print("AI Recognition: " + robot_brain)
@@ -33,14 +31,26 @@ while True:
         print("AI Recognition: " + robot_brain)
         robot_mouth.say(robot_brain)
         robot_mouth.runAndWait()
-#    elif tugName and tugCommand and tugPower in user:
-#        robot_brain = user
-#    elif tugName and tugCommand and tugName and tugCommand in user:
-#        robot_brain = user
-#    elif tugName and tugCommand and tugPosition in user:
-#        robot_brain = user
-#    elif tugName and tugCommand and " and " and tugCommand and tugPosition in user:
-#        robot_brain = user
+    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user:
+        robot_brain = user
+        print("AI Recognition: " + robot_brain)
+        robot_mouth.say(robot_brain)
+        robot_mouth.runAndWait()
+    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user:
+        robot_brain = user
+        print("AI Recognition: " + robot_brain)
+        robot_mouth.say(robot_brain)
+        robot_mouth.runAndWait()
+    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user:
+        robot_brain = user
+        print("AI Recognition: " + robot_brain)
+        robot_mouth.say(robot_brain)
+        robot_mouth.runAndWait()
+    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + " and " + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user:
+        robot_brain = user
+        print("AI Recognition: " + robot_brain)
+        robot_mouth.say(robot_brain)
+        robot_mouth.runAndWait()
     elif "bye" in user:
         robot_brain = "Bye!"
         print("AI Recognition: " + robot_brain)
