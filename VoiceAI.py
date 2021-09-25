@@ -58,7 +58,7 @@ def chatLog():
     txt.insert(END ,"\nUser: Tug Alpha, push Full Power\n")
     txt.insert(END ,"\nAI: Tug Alpha is now at Full Power\n")
     txt.insert(END ,"\nUser: sdvezxv\n")
-    txt.insert(END ,"\nAI: Tug Alpha, could you please \nrepeat that again?\n")
+    txt.insert(END ,"\nAI: Tug Alpha, could you please \nrepeat that again?\n\n")
     txt.config(state=DISABLED)
     
 

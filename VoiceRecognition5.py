@@ -20,8 +20,8 @@ while True:
     
     print("User: " + user)
 
-    if names in user
-        robot_brain = "This is " + names + ", could you repeat that?"
+    if tugName in user:
+        robot_brain = "This is " + tugName + ", could you repeat that?"
     elif "hello" in user:
         robot_brain = "Hello user"
     elif tugName and tugCommand in user:
@@ -36,7 +36,7 @@ while True:
         robot_brain = user
     elif "bye" in user:
         robot_brain = "Bye!"
-    elif
+    else:
         robot_brain = "Could you please repeat that?"
         print("AI Recognition: " + robot_brain)
         robot_mouth.say(robot_brain)
