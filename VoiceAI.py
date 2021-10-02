@@ -84,7 +84,7 @@ def openNewWindow():
 
 
 def filepath():
-    filepath = filedialog.askopenfilename(title="Open File",filetypes=((".wav", "*.wav")))
+    filepath = filedialog.askopenfilename(title="Open File",filetypes = ((".wav", "*.wav"), ("", "")))
     file = open(filepath)
     print(filepath)
     
@@ -96,7 +96,7 @@ def filepath():
         print("File is being analysed...")
         audio = robot_ear.listen(source, timeout = None)
     try:
-        os.startfile(filepath)
+        #os.startfile(filepath)
         text = robot_ear.recognize_google(audio)
         print(f'User Input: {text}')
 
