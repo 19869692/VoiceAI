@@ -19,55 +19,56 @@ user = ""
 
 def userText(user):
     return user
+
 def record():
     
     robot_mouth = pyttsx3.init()
     robot_ear = sr.Recognizer()
     
-    while True:
-        with sr.Microphone() as mic: 
-                robot_ear.adjust_for_ambient_noise(mic)
-                print("AI Recognition: I'm listening...")
-                audio = robot_ear.listen(mic)
-                time.sleep(1)
-        try:        
-                user = robot_ear.recognize_google(audio)  
-                user = user.lower()
-                print("User: " + user)
-        
-        except sr.UnknownValueError:
-                robot_brain = "Could you please repeat that"
-                robot_ear = sr.Recognizer()
-                user = ""
-                break
-        
-        if "hello" in user:
-            robot_brain = "Hello user"
-        elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" in user:
-            robot_brain = user
-        elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user:
-            robot_brain = user
-        elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user:
-            robot_brain = user
-        elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user:
-            robot_brain = user
-        elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + " and " + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user:
-            robot_brain = user
-        elif "exit" in user or "bye" in user:
-            robot_brain = "See you again!"
-            print("AI Recognition: " + robot_brain)
-            robot_mouth.say(robot_brain)
-            robot_mouth.runAndWait()
-            break
-        else:
+    #while True:
+    with sr.Microphone() as mic: 
+            robot_ear.adjust_for_ambient_noise(mic)
+            print("AI Recognition: I'm listening...")
+            audio = robot_ear.listen(mic)
+            time.sleep(1)
+    try:        
+            user = robot_ear.recognize_google(audio)  
+            user = user.lower()
+            print("User: " + user)
+    
+    except sr.UnknownValueError:
             robot_brain = "Could you please repeat that"
-            robot_mouth.say(robot_brain)
-            robot_mouth.runAndWait()
-            break
-        
+            robot_ear = sr.Recognizer()
+            user = ""
+            #break
+    
+    if "hello" in user:
+        robot_brain = "Hello user"
+    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" in user:
+        robot_brain = user
+    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user:
+        robot_brain = user
+    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user:
+        robot_brain = user
+    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user:
+        robot_brain = user
+    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + " and " + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user:
+        robot_brain = user
+    elif "exit" in user or "bye" in user:
+        robot_brain = "See you again!"
         print("AI Recognition: " + robot_brain)
         robot_mouth.say(robot_brain)
         robot_mouth.runAndWait()
+        #break
+    else:
+        robot_brain = "Could you please repeat that"
+        robot_mouth.say(robot_brain)
+        robot_mouth.runAndWait()
+        #break
+    
+    print("AI Recognition: " + robot_brain)
+    robot_mouth.say(robot_brain)
+    robot_mouth.runAndWait()
         
        
     
@@ -84,25 +85,29 @@ def openNewWindow():
 
 
 def filepath():
+    robot_mouth = pyttsx3.init()
+    robot_ear = sr.Recognizer()
+    
     filepath = filedialog.askopenfilename(title="Open File",filetypes = ((".wav", "*.wav"), ("", "")))
     file = open(filepath)
     print(filepath)
     
-    robot_mouth = pyttsx3.init()
-    robot_ear = sr.Recognizer()
-
     with sr.AudioFile(filepath) as source:
-        robot_ear.adjust_for_ambient_noise(source)
         print("File is being analysed...")
-        audio = robot_ear.listen(source, timeout = None)
+        audio = robot_ear.listen(source)
+    
     try:
-        #os.startfile(filepath)
         text = robot_ear.recognize_google(audio)
         print(f'User Input: {text}')
-
+        
     except Exception as e:
         print(e)
     
+    if "hello" in text:
+        robot_brain = "Hello user"
+    
+    print("AI Recognition: " + robot_brain)
+    robot_mouth.say(robot_brain)
     robot_mouth.runAndWait()
     file.close()
     
