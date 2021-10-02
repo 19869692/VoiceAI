@@ -5,6 +5,7 @@ from tkinter import filedialog
 import speech_recognition as sr
 import pyttsx3
 import time
+import os
 
 root = Tk()
 root.geometry('900x700')
@@ -13,26 +14,32 @@ render = ImageTk.PhotoImage(load)
 img = Label(root,image =render)
 img.place(x=0,y=0)
 
+robot_brain= ""
+user = ""
+
+def userText(user):
+    return user
 def record():
+    
     robot_mouth = pyttsx3.init()
     robot_ear = sr.Recognizer()
+    
     while True:
-     
         with sr.Microphone() as mic: 
                 robot_ear.adjust_for_ambient_noise(mic)
-                print("AI Recognition: I'm listening")
+                print("AI Recognition: I'm listening...")
                 audio = robot_ear.listen(mic)
                 time.sleep(1)
         try:        
                 user = robot_ear.recognize_google(audio)  
                 user = user.lower()
                 print("User: " + user)
+        
         except sr.UnknownValueError:
-                
                 robot_brain = "Could you please repeat that"
                 robot_ear = sr.Recognizer()
                 user = ""
-                continue
+                break
         
         if "hello" in user:
             robot_brain = "Hello user"
@@ -46,9 +53,14 @@ def record():
             robot_brain = user
         elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + " and " + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user:
             robot_brain = user
-        elif "exit" in user:
-            robot_brain = "Bye!"
+        elif "exit" in user or "bye" in user:
+            robot_brain = "See you again!"
             print("AI Recognition: " + robot_brain)
+            robot_mouth.say(robot_brain)
+            robot_mouth.runAndWait()
+            break
+        else:
+            robot_brain = "Could you please repeat that"
             robot_mouth.say(robot_brain)
             robot_mouth.runAndWait()
             break
@@ -56,7 +68,8 @@ def record():
         print("AI Recognition: " + robot_brain)
         robot_mouth.say(robot_brain)
         robot_mouth.runAndWait()
-
+        
+       
     
 def openNewWindow():
     newWindow = Toplevel(root)
@@ -69,11 +82,30 @@ def openNewWindow():
     "<Position>\nAft, Fore, Port, Starboard, Port Quarter, Starboard Quarter\n\n<Power Amount>\n5%, 10%, 25%, 50%, 75%, 100%\nminimum, minimum Weight, Bare Weight\n"
     "Quarter Power*, Half Power*, Three Quarters Power*, Full Power*").pack()
 
+
 def filepath():
-    filepath = filedialog.askopenfilename(title="open file",filetypes=(("Insert mp3 files only!!","*.mp3") ,("text files","*.txt")))
+    filepath = filedialog.askopenfilename(title="Open File",filetypes=((".wav", "*.wav")))
     file = open(filepath)
     print(filepath)
+    
+    robot_mouth = pyttsx3.init()
+    robot_ear = sr.Recognizer()
+
+    with sr.AudioFile(filepath) as source:
+        robot_ear.adjust_for_ambient_noise(source)
+        print("File is being analysed...")
+        audio = robot_ear.listen(source, timeout = None)
+    try:
+        os.startfile(filepath)
+        text = robot_ear.recognize_google(audio)
+        print(f'User Input: {text}')
+
+    except Exception as e:
+        print(e)
+    
+    robot_mouth.runAndWait()
     file.close()
+    
 
 def func():
     top = Toplevel()
@@ -87,9 +119,9 @@ def func():
     button7 = Button(top,image=img7,command =filepath)
     button7.pack(pady=10)
     button7.place(x=250, y=100)
-    Label(top, text ="Please insert your pre-recorded audio here").pack()
+    Label(top, text ="Insert your pre-recorded audio here").pack()
     Label.place(x=100,y=100)
-
+   
 def chatLog():
     chatBox = Toplevel()
     chatBox.title('Chat Log')
@@ -98,12 +130,7 @@ def chatLog():
     extract.place(x = 125, y = 450)
     txt = Text(chatBox, height=27)
     txt.grid(row=1, column=0, columnspan=1)
-    txt.insert(END ,"User: Tug Alpha, pull 50%\n")
-    txt.insert(END ,"\nAI: Tug Alpha is now at 50% power\n")
-    txt.insert(END ,"\nUser: Tug Alpha, push Full Power\n")
-    txt.insert(END ,"\nAI: Tug Alpha is now at Full Power\n")
-    txt.insert(END ,"\nUser: sdvezxv\n")
-    txt.insert(END ,"\nAI: Tug Alpha, could you please \nrepeat that again?\n\n")
+    txt.insert(END , userText() + "\n")
     txt.config(state=DISABLED)
     
 
