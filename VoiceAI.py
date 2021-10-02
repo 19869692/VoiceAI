@@ -74,7 +74,7 @@ def record():
 def openNewWindow():
     newWindow = Toplevel(root)
     newWindow.title("FAQ")
-    newWindow.geometry("400x400")
+    newWindow.geometry("550x500")
     Label(newWindow, text ="This is FAQ \n What should be clicked to start recording my live audio? \n "
     "-Please click on the mic button\n\n\n\nAvaialble commands\n[Tug Name], pull/push* [Power Amount]\n"
     "[Tug Name], pull directly* astern\n[Tug Name], all stop\n[Tug Name], move to pull/push - [Tug Name], be ready to pull/push\n"
@@ -115,11 +115,18 @@ def func():
     render1 = ImageTk.PhotoImage(load1)
     img11 = Label(top,image =render1)
     img11.place(x=0,y=0) 
+
     img7 = PhotoImage(file = 'button.w.png')
     button7 = Button(top,image=img7,command =filepath)
     button7.pack(pady=10)
-    button7.place(x=250, y=100)
-    Label(top, text ="Insert your pre-recorded audio here").pack()
+    button7.place(x=200, y=200)
+    #Label(top, text ="Insert your pre-recorded audio here").pack()
+    #Label.place(x=100,y=100)
+    img8 = PhotoImage(file = 'Nwwindowlg.png')
+    button8 = Button(top,image=img8)
+    button8.pack(pady=10)
+    button8.place(x=440, y=10)
+    Label(top, text ="Please insert your pre-recorded audio here").pack()
     Label.place(x=100,y=100)
    
 def chatLog():
