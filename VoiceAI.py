@@ -15,7 +15,6 @@ img = Label(root,image =render)
 img.place(x=0,y=0)
 
 
-robot_brain= ""
 user = ""
 userString = ""
 
@@ -61,10 +60,10 @@ def record():
         robot_mouth.say(robot_brain)
         robot_mouth.runAndWait()
         #break
-    else:
-        robot_brain = "Could you please repeat that"
-        robot_mouth.say(robot_brain)
-        robot_mouth.runAndWait()
+    #else:
+        #robot_brain = "Could you please repeat that"
+        #robot_mouth.say(robot_brain)
+        #robot_mouth.runAndWait()
         #break
     
     print("AI Recognition: " + robot_brain)
@@ -87,7 +86,7 @@ def openNewWindow():
 def filepath():
     robot_mouth = pyttsx3.init()
     robot_ear = sr.Recognizer()
-    
+
     filepath = filedialog.askopenfilename(title="Open File",filetypes = ((".wav", "*.wav"), ("", "")))
     file = open(filepath)
     print(filepath)
@@ -99,21 +98,24 @@ def filepath():
     try:
         text1 = robot_ear.recognize_google(audio)
         print(f'User Input: {text1}')
+        
         txt = Text(chatBox, height=27)
         txt.grid(row=1, column=0, columnspan=1)
-        txt.insert(END, "User: " + text1 + "\n")
-        
-                   
+        #txt.insert(END, "User: " + text1 + "\n")
+         
     except Exception as e:
         print(e)
     
     if "hello" in text1:
         robot_brain = "Hello user!"
+    elif "tug" in text1:
+        robot_brain = "This is tug Alpha, push 50%!"
     
     print("AI Recognition: " + robot_brain + "\n")
     robot_mouth.say(robot_brain)
     robot_mouth.runAndWait()
     txt.insert(END, "AI Recognition: " + robot_brain)
+        
     
     file.close()
 
