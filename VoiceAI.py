@@ -14,14 +14,15 @@ render = ImageTk.PhotoImage(load)
 img = Label(root,image =render)
 img.place(x=0,y=0)
 
+
 robot_brain= ""
 user = ""
+userString = ""
 
-def userText(user):
-    return user
+def close():
+    chatBox.withdraw()
 
 def record():
-    
     robot_mouth = pyttsx3.init()
     robot_ear = sr.Recognizer()
     
@@ -37,7 +38,7 @@ def record():
             print("User: " + user)
     
     except sr.UnknownValueError:
-            robot_brain = "Could you please repeat that"
+            robot_brain = "Could you please repeat that!"
             robot_ear = sr.Recognizer()
             user = ""
             #break
@@ -70,7 +71,6 @@ def record():
     robot_mouth.say(robot_brain)
     robot_mouth.runAndWait()
         
-       
     
 def openNewWindow():
     newWindow = Toplevel(root)
@@ -97,20 +97,25 @@ def filepath():
         audio = robot_ear.listen(source)
     
     try:
-        text = robot_ear.recognize_google(audio)
-        print(f'User Input: {text}')
+        text1 = robot_ear.recognize_google(audio)
+        print(f'User Input: {text1}')
+        txt = Text(chatBox, height=27)
+        txt.grid(row=1, column=0, columnspan=1)
+        txt.insert(END, "User: " + text1 + "\n")
         
+                   
     except Exception as e:
         print(e)
     
-    if "hello" in text:
-        robot_brain = "Hello user"
+    if "hello" in text1:
+        robot_brain = "Hello user!"
     
-    print("AI Recognition: " + robot_brain)
+    print("AI Recognition: " + robot_brain + "\n")
     robot_mouth.say(robot_brain)
     robot_mouth.runAndWait()
-    file.close()
+    txt.insert(END, "AI Recognition: " + robot_brain)
     
+    file.close()
 
 def func():
     top = Toplevel()
@@ -135,16 +140,7 @@ def func():
     Label.place(x=100,y=100)
    
 def chatLog():
-    chatBox = Toplevel()
-    chatBox.title('Chat Log')
-    chatBox.geometry("300x500")
-    extract = Button(chatBox, text = 'Extract')
-    extract.place(x = 125, y = 450)
-    txt = Text(chatBox, height=27)
-    txt.grid(row=1, column=0, columnspan=1)
-    txt.insert(END , userText() + "\n")
-    txt.config(state=DISABLED)
-    
+    chatBox.deiconify()
 
 #record button
 img3 = PhotoImage(file = 'record.png')
@@ -159,7 +155,7 @@ button1.place(x=770, y=630)
 
 #Chat Log
 img2 = PhotoImage(file = 'chatlog.png')
-button2 = Button(root,image = img2,border=0, command = chatLog)
+button2 = Button(root,image = img2,border=0, command=chatLog)
 button2.place(x=100, y=10)
 
 
@@ -173,5 +169,16 @@ img5 = PhotoImage(file = 'logo111.png')
 labelLogo = Label(root, image = img5)
 labelLogo.place(x=680, y=10)
 
+
+# Chat box but invisible
+chatBox = Toplevel()
+chatBox.title('Chat Log')
+chatBox.geometry("300x500")
+txt = Text(chatBox, height=27)
+txt.grid(row=1, column=0, columnspan=1)
+closeBut = Button(chatBox, text = 'Close', command= close)
+closeBut.place(x = 125, y = 450)
+txt.config(state=DISABLED)
+chatBox.withdraw()
 
 root.mainloop()
