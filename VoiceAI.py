@@ -38,7 +38,7 @@ def record():
             robot_brain = "Could you please repeat that!"
             robot_ear = sr.Recognizer()
             user = ""
-            #break
+           
     
     if "hello" in user:
         robot_brain = "Hello user"
@@ -54,14 +54,12 @@ def record():
         robot_brain = user
     elif "exit" in user or "bye" in user:
         robot_brain = "See you again!"
-       
-       
-        #break
+         
     #else:
         #robot_brain = "Could you please repeat that"
         #robot_mouth.say(robot_brain)
         #robot_mouth.runAndWait()
-        #break
+       
     
     print("AI Recognition: " + robot_brain)
     robot_mouth.say(robot_brain)
@@ -81,7 +79,6 @@ def openNewWindow():
 
 
 # Chat box but invisible
-
 chatBox = Toplevel()
 chatBox.title('Chat Log')
 chatBox.geometry("300x500")
@@ -93,8 +90,7 @@ txt.config(state=DISABLED)
 chatBox.withdraw()
 
 
-def filepath():
-    #txt = ''
+def filepath():  
     txt = Text(chatBox, height=27)
     txt.grid(row=1, column=0, columnspan=1)
     
@@ -138,6 +134,9 @@ def filepath():
     else:
         robot_brain = 'Could not detect command'
         print('AI Recognition: Could not detect command')  
+        robot_mouth.say(robot_brain)
+        robot_mouth.runAndWait()
+    
     log.append(robot_brain)
     
     count = 0
@@ -149,6 +148,7 @@ def filepath():
             txt.insert(INSERT, "AI: ")
             txt.insert(INSERT,x + "\n")
         count += 1
+    txt.config(state = DISABLED)
 
 def func():
     top = Toplevel()
@@ -158,7 +158,6 @@ def func():
     render1 = ImageTk.PhotoImage(load1)
     img11 = Label(top,image =render1)
     img11.place(x=0,y=0) 
-
     img7 = PhotoImage(file = 'button.w.png')
     button7 = Button(top,image=img7,command =filepath)
     button7.pack(pady=10)
@@ -170,8 +169,12 @@ def func():
     Label(top, text ="Please insert your pre-recorded audio here").pack()
     Label.place(x=100,y=100)
    
-def chatLog():
+def showChatLog():
     chatBox.deiconify()
+def hideChatLog():
+    chatBox.withdraw()
+# Avoid triggering close event when click on "X" Button
+chatBox.protocol("WM_DELETE_WINDOW", hideChatLog)
 
 #record button
 img3 = PhotoImage(file = 'record.png')
@@ -186,7 +189,7 @@ button1.place(x=770, y=630)
 
 #Chat Log
 img2 = PhotoImage(file = 'chatlog.png')
-button2 = Button(root,image = img2,border=0, command=chatLog)
+button2 = Button(root,image = img2,border=0, command=showChatLog)
 button2.place(x=100, y=10)
 
 
@@ -202,5 +205,6 @@ labelLogo.place(x=680, y=10)
 
 # create list of string
 log = []
+
 
 root.mainloop()
