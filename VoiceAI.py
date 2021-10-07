@@ -14,8 +14,6 @@ render = ImageTk.PhotoImage(load)
 img = Label(root,image =render)
 img.place(x=0,y=0)
 
-
-user = ""
 userString = ""
 
 def close():
@@ -56,9 +54,8 @@ def record():
         robot_brain = user
     elif "exit" in user or "bye" in user:
         robot_brain = "See you again!"
-        print("AI Recognition: " + robot_brain)
-        robot_mouth.say(robot_brain)
-        robot_mouth.runAndWait()
+       
+       
         #break
     #else:
         #robot_brain = "Could you please repeat that"
@@ -83,41 +80,75 @@ def openNewWindow():
     "Quarter Power*, Half Power*, Three Quarters Power*, Full Power*").pack()
 
 
+# Chat box but invisible
+
+chatBox = Toplevel()
+chatBox.title('Chat Log')
+chatBox.geometry("300x500")
+txt = Text(chatBox, height=27)
+txt.grid(row=1, column=0, columnspan=1)
+closeBut = Button(chatBox, text = 'Close', command= close)
+closeBut.place(x = 125, y = 450)
+txt.config(state=DISABLED)
+chatBox.withdraw()
+
+
 def filepath():
+    #txt = ''
+    txt = Text(chatBox, height=27)
+    txt.grid(row=1, column=0, columnspan=1)
+    
     robot_mouth = pyttsx3.init()
     robot_ear = sr.Recognizer()
 
     filepath = filedialog.askopenfilename(title="Open File",filetypes = ((".wav", "*.wav"), ("", "")))
-    file = open(filepath)
     print(filepath)
     
     with sr.AudioFile(filepath) as source:
         print("File is being analysed...")
-        audio = robot_ear.listen(source)
+        audio = robot_ear.record(source)
     
     try:
         text1 = robot_ear.recognize_google(audio)
-        print(f'User Input: {text1}')
-        
-        txt = Text(chatBox, height=27)
-        txt.grid(row=1, column=0, columnspan=1)
-        #txt.insert(END, "User: " + text1 + "\n")
-         
-    except Exception as e:
+        text1.lower()
+        print('User Input: ' + text1)
+        log.append(text1)
+             
+    except Exception as e:      
         print(e)
+      
+    if 'hello' in text1:
+        robot_brain = 'Hello user!'
+        print("AI Recognition: " + robot_brain)
+        robot_mouth.say(robot_brain)
+        robot_mouth.runAndWait()
     
-    if "hello" in text1:
-        robot_brain = "Hello user!"
-    elif "tug" in text1:
-        robot_brain = "This is tug Alpha, push 50%!"
+    elif "alpha" and "pull" and "50" in text1:
+        robot_brain = 'Tug Alpha, pulled 50% power!'
+        print("AI Recognition: " + robot_brain)
+        robot_mouth.say(robot_brain)
+        robot_mouth.runAndWait()
     
-    print("AI Recognition: " + robot_brain + "\n")
-    robot_mouth.say(robot_brain)
-    robot_mouth.runAndWait()
-    txt.insert(END, "AI Recognition: " + robot_brain)
-        
+    elif "alpha" and "pull" and "10" in text1:
+        robot_brain = 'Tug Alpha, pulled 10% power!'
+        print("AI Recognition: " + robot_brain)
+        robot_mouth.say(robot_brain)
+        robot_mouth.runAndWait()
     
-    file.close()
+    else:
+        robot_brain = 'Could not detect command'
+        print('AI Recognition: Could not detect command')  
+    log.append(robot_brain)
+    
+    count = 0
+    for x in log:
+        if count % 2 == 1:
+            txt.insert(INSERT, "User: ")
+            txt.insert(INSERT,x + "\n")
+        else:
+            txt.insert(INSERT, "AI: ")
+            txt.insert(INSERT,x + "\n")
+        count += 1
 
 def func():
     top = Toplevel()
@@ -132,8 +163,6 @@ def func():
     button7 = Button(top,image=img7,command =filepath)
     button7.pack(pady=10)
     button7.place(x=200, y=200)
-    #Label(top, text ="Insert your pre-recorded audio here").pack()
-    #Label.place(x=100,y=100)
     img8 = PhotoImage(file = 'Nwwindowlg.png')
     button8 = Button(top,image=img8)
     button8.pack(pady=10)
@@ -171,16 +200,7 @@ img5 = PhotoImage(file = 'logo111.png')
 labelLogo = Label(root, image = img5)
 labelLogo.place(x=680, y=10)
 
-
-# Chat box but invisible
-chatBox = Toplevel()
-chatBox.title('Chat Log')
-chatBox.geometry("300x500")
-txt = Text(chatBox, height=27)
-txt.grid(row=1, column=0, columnspan=1)
-closeBut = Button(chatBox, text = 'Close', command= close)
-closeBut.place(x = 125, y = 450)
-txt.config(state=DISABLED)
-chatBox.withdraw()
+# create list of string
+log = []
 
 root.mainloop()
