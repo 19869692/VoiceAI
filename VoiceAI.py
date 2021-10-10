@@ -35,16 +35,57 @@ def record():
             user = robot_ear.recognize_google(audio)  
             user = user.lower()
             
-            #replacement
+            #replacement for "tug"
             user2 = user.replace("dolphin", "tug")
-            user2 = user.replace("dog", "tug")
-            user2 = user.replace("nothing", "tug")
-            user2 = user.replace("thug", "tug")
-            user2 = user.replace("stop", "tug")
+            if "dog" in user:    
+                user2 = user.replace("dog", "tug")
+            if "nothing" in user:   
+                user2 = user.replace("nothing", "tug")
+            if "thug" in user:   
+                user2 = user.replace("thug", "tug")
+            if "stop" in user:   
+                user2 = user.replace("stop", "tug")
+            if "tuck" in user:   
+                user2 = user.replace("tuck", "tug")
+            if "death" in user:   
+                user2 = user.replace("death", "tug")
+            if "tough" in user:   
+                user2 = user.replace("tough", "tug")
+            
+            #replacement for "Bravo"
+            if "grapple" in user:
+                user2 = user.replace("grapple", "bravo")
+            if "grogol" in user:
+                user2 = user.replace("grogol", "bravo")
+            if "wobble" in user:
+                user2 = user.replace("wobble", "bravo")
+            if "trouble" in user:
+                user2 = user.replace("trouble", "bravo")
+            if "gravel" in user:
+                user2 = user.replace("gravel", "bravo")
+            if "roswell" in user:
+                user2 = user.replace("roswell", "bravo")
+            if "rival" in user:
+                user2 = user.replace("rival", "bravo")
+            if "garoppolo" in user:
+                user2 = user.replace("garoppolo", "bravo")
+            if "graupel" in user:
+                user2 = user.replace("garoppolo", "bravo")          
+            if "nuovo" in user:
+                user2 = user.replace("nuovo", "bravo")  
+            
+            if "run" in user:
+                user2 = user.replace("run", "1")
+            if "tree" in user:
+                user2 = user.replace("tree", "3")
+            if "see" in user:
+                user2 = user.replace("see", "c")
+            if "sea" in user:
+                user2 = user.replace("sea", "c")
             
             print("User: " + user2)
             log.append(user2)
-    
+                
     except sr.UnknownValueError:
             robot_brain = "Could you please repeat that!"
             robot_ear = sr.Recognizer()
@@ -55,21 +96,33 @@ def record():
     
     if "hello" in user2:
         robot_brain = "Hello user"
-    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" in user2:
-        robot_brain = user2
-    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user2:
-        robot_brain = user2
-    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user2:
-        robot_brain = user2
-    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user2:
-        robot_brain = user2
-    elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + " and " + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user2:
-        robot_brain = user2
-    elif "exit" in user or "bye" in user:
+    # elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" in user2:
+    #     robot_brain = user2
+    # elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user2:
+    #     robot_brain = user2
+    # elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user2:
+    #     robot_brain = user2
+    # elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user2:
+    #     robot_brain = user2
+    # elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + " and " + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user2:
+    #     robot_brain = user2
+    elif "tug" in user2:
+        robot_brain = "Which tug are you refering to?"
+    elif "alpha" in user2:
+        robot_brain = "This is tug Alpha"
+    elif "bravo" in user2:
+        robot_brain = "This is tug Bravo"
+    elif "exit" in user2 or "bye" in user2:
         robot_brain = "See you again!"       
     else:
-        robot_brain = "Unkown Command! Could you please repeat that"
-          
+         robot_brain = "Unkown Command! Could you please repeat that"
+        
+   
+    
+    print("AI Recognition: " + robot_brain)
+    robot_mouth.say(robot_brain)
+    robot_mouth.runAndWait()
+    
     log.append(robot_brain)
     count = 0
     for x in log:
@@ -79,12 +132,7 @@ def record():
         else:
             txt.insert(INSERT, "AI: ")
             txt.insert(INSERT,x + "\n")
-        count += 1
-    
-    print("AI Recognition: " + robot_brain)
-    robot_mouth.say(robot_brain)
-    robot_mouth.runAndWait()
-        
+        count += 1   
     
 def openNewWindow():
     newWindow = Toplevel(root)
