@@ -30,12 +30,13 @@ def record():
             robot_ear.adjust_for_ambient_noise(mic)
             print("AI Recognition: I'm listening...")
             audio = robot_ear.listen(mic)
-            time.sleep(1)
+            time.sleep(0.5)
     try:        
             user = robot_ear.recognize_google(audio)  
             user = user.lower()
             
             #replacement for "tug"
+            time.sleep(2)
             user2 = user.replace("dolphin", "tug")
             if "dog" in user:    
                 user2 = user.replace("dog", "tug")
@@ -43,14 +44,20 @@ def record():
                 user2 = user.replace("nothing", "tug")
             if "thug" in user:   
                 user2 = user.replace("thug", "tug")
-            if "stop" in user:   
-                user2 = user.replace("stop", "tug")
             if "tuck" in user:   
                 user2 = user.replace("tuck", "tug")
             if "death" in user:   
                 user2 = user.replace("death", "tug")
             if "tough" in user:   
                 user2 = user.replace("tough", "tug")
+            if "talk" in user:   
+                user2 = user.replace("talk", "tug")
+            if "duck" in user:   
+                user2 = user.replace("duck", "tug")
+            
+            #replacement for "Charlie"
+            if "johnny" in user:
+                user2 = user.replace("johnny", "charlie")
             
             #replacement for "Bravo"
             if "grapple" in user:
@@ -73,7 +80,26 @@ def record():
                 user2 = user.replace("garoppolo", "bravo")          
             if "nuovo" in user:
                 user2 = user.replace("nuovo", "bravo")  
+            if "rubble" in user:
+                user2 = user.replace("rubble", "bravo") 
+            if "bubble" in user:
+                user2 = user.replace("bubble", "bravo") 
+            if "bible" in user:
+                user2 = user.replace("bible", "bravo") 
+            if "level" in user:
+                user2 = user.replace("level", "bravo")
+            if "marvel" in user:
+                user2 = user.replace("marvel", "bravo")
+            if "apple" in user:
+                user2 = user.replace("apple", "bravo")
+            if "ravel" in user:
+                user2 = user.replace("ravel", "bravo")
+            if "waffle" in user:
+                user2 = user.replace("waffle", "bravo")
+            if "revelstoke" in user:
+                user2 = user.replace("revelstoke", "bravo stop")
             
+            #Replacement for numbers and letters
             if "run" in user:
                 user2 = user.replace("run", "1")
             if "tree" in user:
@@ -82,6 +108,100 @@ def record():
                 user2 = user.replace("see", "c")
             if "sea" in user:
                 user2 = user.replace("sea", "c")
+            if "hey" in user:
+                user2 = user.replace("hey", "a")
+            if "be" in user:
+                user2 = user.replace("be", "b")
+            if "bee" in user:
+                user2 = user.replace("bee", "b")
+            if "city" in user:
+                user2 = user.replace("city", "50")
+            
+            
+            #replacement for "starboard"
+            if "starbucks" in user:
+                user2 = user.replace("starbucks", "starboard")
+            if "sabo" in user:
+                user2 = user.replace("sabo", "starboard")
+            if "starmart" in user:
+                user2 = user.replace("starmart", "starboard")
+            
+            #replacement for positions
+            if "potter" in user:
+                user2 = user.replace("potter", "quarter")
+            if "water" in user:
+                user2 = user.replace("water", "quarter")
+            if " water" in user:
+                user2 = user.replace(" water", "quarter")
+            if "water " in user:
+                user2 = user.replace("water ", "quarter")
+            if "carter" in user:
+                user2 = user.replace("carter", "quarter")
+            if "portel" in user:
+                user2 = user.replace("portel", "quarter")
+            if "park" in user:
+                user2 = user.replace("park", "port")
+            if "pot" in user:
+                user2 = user.replace("pot", "port")
+            if "pops" in user:
+                user2 = user.replace("pops", "port")
+            if "report" in user:
+                user2 = user.replace("report", "port")
+            if "hot" in user:
+                user2 = user.replace("hot", "port")
+            if "four"in user:
+                user2 = user.replace("four", "fore")
+            if "fall"in user:
+                user2 = user.replace("fall", "fore")
+            if "app" in user:
+                user2 = user.replace("app", "aft")
+            if "act" in user:
+                user2 = user.replace("act", "aft")
+            if "hospital" in user:
+                user2 = user.replace("hospital", "port quarter")
+            if "postpartum" in user:
+                user2 = user.replace("postpartum", "port quarter")
+            if "partquarter" in user:
+                user2 = user.replace("partquarter", "port quarter")
+            
+            #replacement for actions
+            if "pool" in user:
+                user2 = user.replace("pool", "pull")
+            if "poo" in user:
+                user2 = user.replace("poo", "pull")
+            if "poor" in user:
+                user2 = user.replace("poor", "pull")
+            if "bush" in user:
+                user2 = user.replace("bush", "push")
+            if "put" in user:
+                user2 = user.replace("put", "push")
+            if "busca" in user:
+                user2 = user.replace("busca", "push")
+            if "pushpay" in user:
+                user2 = user.replace("pushpay", "push")
+            if "pasta" in user:
+                user2 = user.replace("pasta", "push")
+            if "pushed" in user:
+                user2 = user.replace("pushed", "push")
+            if "food" in user:
+                user2 = user.replace("food", "push")
+            if "who's" in user:
+                user2 = user.replace("who's", "push")
+            if "verse" in user:
+                user2 = user.replace("verse", "push")
+            if "who" in user:
+                user2 = user.replace("who", "push")
+            if "fish" in user:
+                user2 = user.replace("fish", "push")
+            if "music" in user:
+                user2 = user.replace("music", "push")
+            if "stock" in user:
+                user2 = user.replace("stock", "stop")
+            if "stopped" in user:
+                user2 = user.replace("stopped", "stop")
+            if "squareup" in user:
+                user2 = user.replace("squareup", "square up")
+            
             
             print("User: " + user2)
             log.append(user2)
@@ -91,31 +211,130 @@ def record():
             robot_ear = sr.Recognizer()
             user2 = ""
     except Exception as e:
-            robot_brain = "System down"       
+            robot_brain = "System down!"       
             print(e)
     
+    #Responses
     if "hello" in user2:
         robot_brain = "Hello user"
-    # elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" in user2:
-    #     robot_brain = user2
-    # elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user2:
-    #     robot_brain = user2
-    # elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" in user2:
-    #     robot_brain = user2
-    # elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "5%" and "10%" and "25%" and "50%" and "75%" and "100%" and "minimum" and "minimum weight" and "bare weight" and "quarter Power" and "Half Power"and "Three Quarters Power" and "Full Power" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user2:
-    #     robot_brain = user2
-    # elif "alpha" and "bravo" and "charlie" and "1" and "2" and "3" and "A" and "B" and "C" and "Aft tug" and "Fore tug" and "Port tug" and "Starboard tug" and "Port quarter tug" and "Starboard quarter tug" + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + " and " + "pull" and "push" and "pull directly astern" and "all stop" and "move to pull" and "move to push" and "be ready to pull" and "be ready to push" and "move to" and "square up" + "Aft" and "Fore, Port" and "Starboard" and "Port Quarter"and "Starboard Quarter" in user2:
-    #     robot_brain = user2
     elif "tug" in user2:
         robot_brain = "Which tug are you refering to?"
-    elif "alpha" in user2:
-        robot_brain = "This is tug Alpha"
-    elif "bravo" in user2:
-        robot_brain = "This is tug Bravo"
+    # Push Command
+    elif "bravo" in user2 and "push" and "100%" in user2:
+        robot_brain = "Tug Bravo, pushed to 100% power!"
+    elif "bravo" in user2 and "push" and "100" and "percent" in user2:
+        robot_brain = "Tug Bravo, pushed to 100% power!"
+    elif "bravo" in user2 and "push" and "75%" in user2:
+        robot_brain = "Tug Bravo, pushed to 75% power!"
+    elif "bravo" in user2 and "push" and "75" and "percent" in user2:
+        robot_brain = "Tug Bravo, pushed to 75% power!"
+    elif "bravo" in user2 and "push" and "50%" in user2:
+        robot_brain = "Tug Bravo, pushed to 50% power!"
+    elif "bravo" in user2 and "push"  and "50" and "percent" in user2:
+        robot_brain = "Tug Bravo, pushed to 50% power!"
+    elif "bravo" in user2 and "push" and "25%" in user2:
+        robot_brain = "Tug Bravo, pushed to 25% power!"
+    elif "bravo" in user2 and "push" and "25" and "percent" in user2:
+        robot_brain = "Tug Bravo, pushed to 25% power!"
+    elif "bravo" in user2 and "push" and "10%" in user2:
+        robot_brain = "Tug Bravo, pushed to 10% power!"
+    elif "bravo" in user2 and "push" and "10" and "percent" in user2:
+        robot_brain = "Tug Bravo, pushed to 10% power!"
+    elif "bravo" in user2 and "push" and "5"  and "%" in user2:
+        robot_brain = "Tug Bravo, pushed to 5% power!"
+    elif "bravo" in user2 and "push" and "5"  and "percent" in user2:
+        robot_brain = "Tug Bravo, pushed to 5% power!"
+    
+    elif "alpha" in user2 and "push" and "100%" in user2:
+        robot_brain = "Tug Alpha, pushed to 100% power!"
+    elif "alpha" in user2 and "push" and "100" and "percent" in user2:
+        robot_brain = "Tug Alpha, pushed to 100% power!"
+    elif "alpha" in user2 and "push" and "75%" in user2:
+        robot_brain = "Tug Alpha, pushed to 75% power!"
+    elif "alpha" in user2 and "push" and "75" and "percent" in user2:
+        robot_brain = "Tug Alpha, pushed to 75% power!"
+    elif "alpha" in user2 and "push" and "50%" in user2:
+        robot_brain = "Tug Alpha, pushed to 50% power!"
+    elif "alpha" in user2 and "push" and "50" and "percent" in user2:
+        robot_brain = "Tug Alpha, pushed to 50% power!"
+    elif "alpha" in user2 and "push" and "25%" in user2:
+        robot_brain = "Tug Alpha, pushed to 25% power!"
+    elif "alpha" in user2 and "push" and "25" and "percent" in user2:
+        robot_brain = "Tug Alpha, pushed to 25% power!"
+    elif "alpha" in user2 and "push" and "10%" in user2:
+        robot_brain = "Tug Alpha, pushed to 10% power!"
+    elif "alpha" in user2 and "push" and "10" and "percent" in user2:
+        robot_brain = "Tug Alpha, pushed to 10% power!"
+    elif "alpha" in user2 and "push" and "5" and "%" in user2:
+        robot_brain = "Tug Alpha, pushed to 5% power!"
+    elif "alpha" in user2 and "push" and "5" and "percent" in user2:
+        robot_brain = "Tug Alpha, pushed to 5% power!"
+
+    elif "charlie" in user2 and "push" and "100%" in user2:
+        robot_brain = "Tug Charlie, pushed to 100% power!"
+    elif "charlie" in user2 and "push" and "100" and "percent" in user2:
+        robot_brain = "Tug Charlie, pushed to 100% power!"
+    elif "charlie" in user2 and "push" and "75%" in user2:
+        robot_brain = "Tug Charlie, pushed to 75% power!"
+    elif "charlie" in user2 and "push" and "75" and "percent" in user2:
+        robot_brain = "Tug Charlie, pushed to 75% power!"
+    elif "charlie" in user2 and "push" and "50%" in user2:
+        robot_brain = "Tug Charlie, pushed to 50% power!"
+    elif "charlie" in user2 and "push" and "50" and "percent" in user2:
+        robot_brain = "Tug Charlie, pushed to 50% power!"
+    elif "charlie" in user2 and "push" and "25%" in user2:
+        robot_brain = "Tug Charlie, pushed to 25% power!"
+    elif "charlie" in user2 and "push" and "25" and "percent" in user2:
+        robot_brain = "Tug Charlie, pushed to 25% power!"
+    elif "charlie" in user2 and "push" and "10%" in user2:
+        robot_brain = "Tug Charlie, pushed to 10% power!"
+    elif "charlie" in user2 and "push" and "10" and "percent" in user2:
+        robot_brain = "Tug Charlie, pushed to 10% power!"
+    elif "charlie" in user2 and "push" and "5" and "%" in user2:
+        robot_brain = "Tug Charlie, pushed to 5% power!"
+    elif "charlie" in user2 and "push" and "5" and "percent" in user2:
+        robot_brain = "Tug Charlie, pushed to 5% power!"
+    
+    # All stop command
+    elif "bravo" in user2 and "stop" in user2:
+        robot_brain = "Tug Bravo is now stopped!"
+    elif "alpha" in user2 and "stop" in user2:
+        robot_brain = "Tug Alpha is now stopped!"
+    elif "charlie" in user2 and "stop" in user2:
+        robot_brain = "Tug Charlie is now stopped!"
+    
+    # Square up
+    elif "bravo" in user2 and "square" in user2:
+        robot_brain = "Tug Bravo is now squared up!"
+    elif "alpha" in user2 and "square" in user2:
+        robot_brain = "Tug Alpha is now squared up!"
+    elif "charlie" in user2 and "square" in user2:
+        robot_brain = "Tug Charlie is now squared up!"
+    
+    # Positions
+    elif "bravo" in user2 and "move" and "fore" in user2:
+        robot_brain = "Tug Bravo is moving to fore!"
+    elif "charlie" in user2 and "move" and "fore" in user2:
+        robot_brain = "Tug Charlie is moving to fore!"
+    elif "alpha" in user2 and "move" and "fore" in user2:
+        robot_brain = "Tug Alpha is moving to fore!"
+    elif "bravo" in user2 and "move" and "port" and "quarter" in user2:
+        robot_brain = "Tug Bravo is moving to port quarter!"
+    elif "charlie" in user2 and "move" and "port" and "quarter" in user2:
+        robot_brain = "Tug Charlie is moving to port quarter!"
+    elif "alpha" in user2 and "move" and "port" and "quarter" in user2:
+        robot_brain = "Tug Alpha is moving to port quarter!"
+    elif "bravo" in user2 and "move" and "port" in user2:
+        robot_brain = "Tug Bravo is moving to port!"
+    elif "charlie" in user2 and "move" and "port" in user2:
+        robot_brain = "Tug Charlie is moving to port!"
+    elif "alpha" in user2 and "move" and "port" in user2:
+        robot_brain = "Tug Alpha is moving to port!"
+    
     elif "exit" in user2 or "bye" in user2:
         robot_brain = "See you again!"       
     else:
-         robot_brain = "Unkown Command! Could you please repeat that"
+         robot_brain = "Unknown Command! Could you please repeat that"
         
    
     
@@ -133,7 +352,8 @@ def record():
             txt.insert(INSERT, "AI: ")
             txt.insert(INSERT,x + "\n")
         count += 1   
-    
+    user2 = ""
+
 def openNewWindow():
     newWindow = Toplevel(root)
     newWindow.title("FAQ")
@@ -244,6 +464,7 @@ def showChatLog():
     chatBox.deiconify()
 def hideChatLog():
     chatBox.withdraw()
+
 # Avoid triggering close event when click on "X" Button
 chatBox.protocol("WM_DELETE_WINDOW", hideChatLog)
 
