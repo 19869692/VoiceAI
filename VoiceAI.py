@@ -104,6 +104,8 @@ def record():
                     user2 = user.replace("nuovo", "bravo")  
                 if "rubble" in user:
                     user2 = user.replace("rubble", "bravo") 
+                if "yahoo" in user:
+                    user2 = user.replace("yahoo", "bravo") 
                 if "bubble" in user:
                     user2 = user.replace("bubble", "bravo") 
                 if "bible" in user:
@@ -258,6 +260,8 @@ def record():
                     user2 = user.replace("who's", "push")
                 if "push's" in user:
                     user2 = user.replace("push's", "push")
+                if "seapush" in user:
+                    user2 = user.replace("seapush", "push")
                 if "verse" in user:
                     user2 = user.replace("verse", "push")
                 if "who" in user:
@@ -309,6 +313,12 @@ def record():
                         user2 = user.replace("portal power","quarter power")
                     if "potter power" in user:
                         user2 = user.replace("potter power","quarter power")
+                    if "pushtown" in user:
+                        user2 = user.replace("pushtown","full power")
+                    if "boomhauer" in user:
+                        user2 = user.replace("boomhauer","full power")
+                    if "fulldtown" in user:
+                        user2 = user.replace("fulldtown","full power")
                     if "quattro power" in user:
                         user2 = user.replace("quattro power","quarter power")
                     if "water power" in user:
@@ -346,6 +356,14 @@ def record():
                     user2 = user.replace("hab", "half")
                 if "bear" in user:
                     user2 = user.replace("bear", "bare")
+                if "hours" in user:
+                    user2 = user.replace("hours", "power")
+                if "our" in user:
+                    user2 = user.replace("our", "power")
+                if "foo" in user:
+                    user2 = user.replace("foo", "full")
+                if "fool" in user:
+                    user2 = user.replace("fool", "full")
                 break
             
             print("User: " + user2)
@@ -388,7 +406,7 @@ def record():
         robot_brain = "Tug Bravo, pushed to 100% power!"
     elif "bravo" in user2 and "push" and "100" in user2 and "percent" in user2:
         robot_brain = "Tug Bravo, pushed to 100% power!"
-    elif "bravo" in user2 and "push" and "full" and "power" in user2:
+    elif "bravo" in user2 and "push" and "full" in user2 and "power" in user2:
         robot_brain = "Tug Bravo, pushed to maximum power!"
     elif "bravo" in user2 and "push" and "75%" in user2:
         robot_brain = "Tug Bravo, pushed to 75% power!"
@@ -398,13 +416,13 @@ def record():
         robot_brain = "Tug Bravo, pushed to 50% power!"
     elif "bravo" in user2 and "push"  and "50" in user2 and "percent" in user2:
         robot_brain = "Tug Bravo, pushed to 50% power!"
-    elif "bravo" in user2 and "push" and "half" and "power" in user2:
+    elif "bravo" in user2 and "push" and "half" in user2 and "power" in user2:
         robot_brain = "Tug Bravo, pushed to half power!"
     elif "bravo" in user2 and "push" and "25%" in user2:
         robot_brain = "Tug Bravo, pushed to 25% power!"
     elif "bravo" in user2 and "push" and "25" in user2 and "percent" in user2:
         robot_brain = "Tug Bravo, pushed to 25% power!"
-    elif "bravo" in user2 and "push" and "quarter" and "power" in user2:
+    elif "bravo" in user2 and "push" and "quarter" in user2 and "power" in user2:
         robot_brain = "Tug Bravo, pushed to quarter power!"
     elif "bravo" in user2 and "push" and "10%" in user2:
         robot_brain = "Tug Bravo, pushed to 10% power!"
@@ -427,7 +445,7 @@ def record():
         robot_brain = "Tug Alpha, pushed to 100% power!"
     elif "alpha" in user2 and "push" and "100" in user2 and "percent" in user2:
         robot_brain = "Tug Alpha, pushed to 100% power!"
-    elif "alpha" in user2 and "push" and "full" and "power" in user2:
+    elif "alpha" in user2 and "push" and "full" in user2 and "power" in user2:
         robot_brain = "Tug Alpha, pushed to maximum power!"
     elif "alpha" in user2 and "push" and "75%" in user2:
         robot_brain = "Tug Alpha, pushed to 75% power!"
@@ -437,13 +455,13 @@ def record():
         robot_brain = "Tug Alpha, pushed to 50% power!"
     elif "alpha" in user2 and "push" and "50" in user2 and "percent" in user2:
         robot_brain = "Tug Alpha, pushed to 50% power!"
-    elif "alpha" in user2 and "push" and "half" and "power" in user2:
+    elif "alpha" in user2 and "push" and "half" in user2 and "power" in user2:
         robot_brain = "Tug Alpha, pushed to half power!"
     elif "alpha" in user2 and "push" and "25%" in user2:
         robot_brain = "Tug Alpha, pushed to 25% power!"
     elif "alpha" in user2 and "push" and "25" in user2 and "percent" in user2:
         robot_brain = "Tug Alpha, pushed to 25% power!"
-    elif "alpha" in user2 and "push" and "quarter" and "power" in user2:
+    elif "alpha" in user2 and "push" and "quarter" in user2 and "power" in user2:
         robot_brain = "Tug Alpha, pushed to quarter power!"
     elif "alpha" in user2 and "push" and "10%" in user2:
         robot_brain = "Tug Alpha, pushed to 10% power!"
@@ -466,7 +484,7 @@ def record():
         robot_brain = "Tug Charlie, pushed to 100% power!"
     elif "charlie" in user2 and "push" and "100" in user2 and "percent" in user2:
         robot_brain = "Tug Charlie, pushed to 100% power!"
-    elif "charlie" in user2 and "push" and "full" and "power" in user2:
+    elif "charlie" in user2 and "push" and "full" in user2 and "power" in user2:
         robot_brain = "Tug Charlie, pushed to maximum power!"
     elif "charlie" in user2 and "push" and "75%" in user2:
         robot_brain = "Tug Charlie, pushed to 75% power!"
@@ -476,13 +494,13 @@ def record():
         robot_brain = "Tug Charlie, pushed to 50% power!"
     elif "charlie" in user2 and "push" and "50" in user2 and "percent" in user2:
         robot_brain = "Tug Charlie, pushed to 50% power!"
-    elif "charlie" in user2 and "push" and "half" and "power" in user2:
+    elif "charlie" in user2 and "push" and "half" in user2 and "power" in user2:
         robot_brain = "Tug Charlie, pushed to half power!"
     elif "charlie" in user2 and "push" and "25%" in user2:
         robot_brain = "Tug Charlie, pushed to 25% power!"
     elif "charlie" in user2 and "push" and "25" in user2 and "percent" in user2:
         robot_brain = "Tug Charlie, pushed to 25% power!"
-    elif "charlie" in user2 and "push" and "quarter" and "power" in user2:
+    elif "charlie" in user2 and "push" and "quarter" in user2 and "power" in user2:
         robot_brain = "Tug Charlie, pushed to quarter power!"
     elif "charlie" in user2 and "push" and "10%" in user2:
         robot_brain = "Tug Charlie, pushed to 10% power!"
@@ -506,7 +524,7 @@ def record():
         robot_brain = "Tug Bravo, pulled to 100% power!"
     elif "bravo" in user2 and "pull" and "100" in user2 and "percent" in user2:
         robot_brain = "Tug Bravo, pulled to 100% power!"
-    elif "bravo" in user2 and "pull" and "full" and "power" in user2:
+    elif "bravo" in user2 and "pull" and "full" in user2 and "power" in user2:
         robot_brain = "Tug Bravo, pulled to maximum power!"
     elif "bravo" in user2 and "pull" and "75%" in user2:
         robot_brain = "Tug Bravo, pulled to 75% power!"
@@ -516,13 +534,13 @@ def record():
         robot_brain = "Tug Bravo, pulled to 50% power!"
     elif "bravo" in user2 and "pull"  and "50" in user2 and "percent" in user2:
         robot_brain = "Tug Bravo, pulled to 50% power!"
-    elif "bravo" in user2 and "pull" and "half" and "power" in user2:
+    elif "bravo" in user2 and "pull" and "half" in user2 and "power" in user2:
         robot_brain = "Tug Bravo, pulled to half power!"
     elif "bravo" in user2 and "pull" and "25%" in user2:
         robot_brain = "Tug Bravo, pulled to 25% power!"
     elif "bravo" in user2 and "pull" and "25" in user2 and "percent" in user2:
         robot_brain = "Tug Bravo, pulled to 25% power!"
-    elif "bravo" in user2 and "pull" and "quarter" and "power" in user2:
+    elif "bravo" in user2 and "pull" and "quarter" in user2 and "power" in user2:
         robot_brain = "Tug Bravo, pulled to quarter power!"
     elif "bravo" in user2 and "pull" and "10%" in user2:
         robot_brain = "Tug Bravo, pulled to 10% power!"
@@ -545,7 +563,7 @@ def record():
         robot_brain = "Tug Alpha, pulled to 100% power!"
     elif "alpha" in user2 and "pull" and "100" in user2 and "percent" in user2:
         robot_brain = "Tug Alpha, pulled to 100% power!"
-    elif "alpha" in user2 and "pull" and "full" and "power" in user2:
+    elif "alpha" in user2 and "pull" and "full" in user2 and "power" in user2:
         robot_brain = "Tug Alpha, pulled to maximum power!"
     elif "alpha" in user2 and "pull" and "75%" in user2:
         robot_brain = "Tug Alpha, pulled to 75% power!"
@@ -584,7 +602,7 @@ def record():
         robot_brain = "Tug Charlie, pulled to 100% power!"
     elif "charlie" in user2 and "pull" and "100" in user2 and "percent" in user2:
         robot_brain = "Tug Charlie, pulled to 100% power!"
-    elif "charlie" in user2 and "pull" and "full" and "power" in user2:
+    elif "charlie" in user2 and "pull" and "full" in user2 and "power" in user2:
         robot_brain = "Tug Charlie, pulled to maximum power!"
     elif "charlie" in user2 and "pull" and "75%" in user2:
         robot_brain = "Tug Charlie, pulled to 75% power!"
@@ -803,6 +821,8 @@ def filepath():
                     text2 = text1.replace("grapple", "bravo")
                 if "breville" in text1:
                     text2 = text1.replace("breville", "bravo")
+                if "novel" in text1:
+                    text2 = text1.replace("novel", "bravo")
                 if "grogol" in text1:
                     text2 = text1.replace("grogol", "bravo")
                 if "wobble" in text1:
@@ -1093,7 +1113,7 @@ def filepath():
         robot_brain = "Tug Bravo, pushed to 100% power!"
     elif "bravo" in text2 and "push" and "100" in text2 and "percent" in text2:
         robot_brain = "Tug Bravo, pushed to 100% power!"
-    elif "bravo" in text2 and "push" and "full" and "power" in text2:
+    elif "bravo" in text2 and "push" and "full" in text2 and "power" in text2:
         robot_brain = "Tug Bravo, pushed to maximum power!"
     elif "bravo" in text2 and "push" and "75%" in text2:
         robot_brain = "Tug Bravo, pushed to 75% power!"
@@ -1103,13 +1123,13 @@ def filepath():
         robot_brain = "Tug Bravo, pushed to 50% power!"
     elif "bravo" in text2 and "push"  and "50" in text2 and "percent" in text2:
         robot_brain = "Tug Bravo, pushed to 50% power!"
-    elif "bravo" in text2 and "push" and "half" and "power" in text2:
+    elif "bravo" in text2 and "push" and "half" in text2 and "power" in text2:
         robot_brain = "Tug Bravo, pushed to half power!"
     elif "bravo" in text2 and "push" and "25%" in text2:
         robot_brain = "Tug Bravo, pushed to 25% power!"
     elif "bravo" in text2 and "push" and "25" in text2 and "percent" in text2:
         robot_brain = "Tug Bravo, pushed to 25% power!"
-    elif "bravo" in text2 and "push" and "quarter" and "power" in text2:
+    elif "bravo" in text2 and "push" and "quarter" in text2 and "power" in text2:
         robot_brain = "Tug Bravo, pushed to quarter power!"
     elif "bravo" in text2 and "push" and "10%" in text2:
         robot_brain = "Tug Bravo, pushed to 10% power!"
@@ -1132,7 +1152,7 @@ def filepath():
         robot_brain = "Tug Alpha, pushed to 100% power!"
     elif "alpha" in text2 and "push" and "100" in text2 and "percent" in text2:
         robot_brain = "Tug Alpha, pushed to 100% power!"
-    elif "alpha" in text2 and "push" and "full" and "power" in text2:
+    elif "alpha" in text2 and "push" and "full" in text2 and "power" in text2:
         robot_brain = "Tug Alpha, pushed to maximum power!"
     elif "alpha" in text2 and "push" and "75%" in text2:
         robot_brain = "Tug Alpha, pushed to 75% power!"
@@ -1142,13 +1162,13 @@ def filepath():
         robot_brain = "Tug Alpha, pushed to 50% power!"
     elif "alpha" in text2 and "push" and "50" in text2 and "percent" in text2:
         robot_brain = "Tug Alpha, pushed to 50% power!"
-    elif "alpha" in text2 and "push" and "half" and "power" in text2:
+    elif "alpha" in text2 and "push" and "half" in text2 and "power" in text2:
         robot_brain = "Tug Alpha, pushed to half power!"
     elif "alpha" in text2 and "push" and "25%" in text2:
         robot_brain = "Tug Alpha, pushed to 25% power!"
     elif "alpha" in text2 and "push" and "25" in text2 and "percent" in text2:
         robot_brain = "Tug Alpha, pushed to 25% power!"
-    elif "alpha" in text2 and "push" and "quarter" and "power" in text2:
+    elif "alpha" in text2 and "push" and "quarter" in text2 and "power" in text2:
         robot_brain = "Tug Alpha, pushed to quarter power!"
     elif "alpha" in text2 and "push" and "10%" in text2:
         robot_brain = "Tug Alpha, pushed to 10% power!"
@@ -1171,7 +1191,7 @@ def filepath():
         robot_brain = "Tug Charlie, pushed to 100% power!"
     elif "charlie" in text2 and "push" and "100" in text2 and "percent" in text2:
         robot_brain = "Tug Charlie, pushed to 100% power!"
-    elif "charlie" in text2 and "push" and "full" and "power" in text2:
+    elif "charlie" in text2 and "push" and "full" in text2 and "power" in text2:
         robot_brain = "Tug Charlie, pushed to maximum power!"
     elif "charlie" in text2 and "push" and "75%" in text2:
         robot_brain = "Tug Charlie, pushed to 75% power!"
@@ -1181,13 +1201,13 @@ def filepath():
         robot_brain = "Tug Charlie, pushed to 50% power!"
     elif "charlie" in text2 and "push" and "50" in text2 and "percent" in text2:
         robot_brain = "Tug Charlie, pushed to 50% power!"
-    elif "charlie" in text2 and "push" and "half" and "power" in text2:
+    elif "charlie" in text2 and "push" and "half" in text2 and "power" in text2:
         robot_brain = "Tug Charlie, pushed to half power!"
     elif "charlie" in text2 and "push" and "25%" in text2:
         robot_brain = "Tug Charlie, pushed to 25% power!"
     elif "charlie" in text2 and "push" and "25" in text2 and "percent" in text2:
         robot_brain = "Tug Charlie, pushed to 25% power!"
-    elif "charlie" in text2 and "push" and "quarter" and "power" in text2:
+    elif "charlie" in text2 and "push" and "quarter" in text2 and "power" in text2:
         robot_brain = "Tug Charlie, pushed to quarter power!"
     elif "charlie" in text2 and "push" and "10%" in text2:
         robot_brain = "Tug Charlie, pushed to 10% power!"
@@ -1211,7 +1231,7 @@ def filepath():
         robot_brain = "Tug Bravo, pulled to 100% power!"
     elif "bravo" in text2 and "pull" and "100" in text2 and "percent" in text2:
         robot_brain = "Tug Bravo, pulled to 100% power!"
-    elif "bravo" in text2 and "pull" and "full" and "power" in text2:
+    elif "bravo" in text2 and "pull" and "full" in text2 and "power" in text2:
         robot_brain = "Tug Bravo, pulled to maximum power!"
     elif "bravo" in text2 and "pull" and "75%" in text2:
         robot_brain = "Tug Bravo, pulled to 75% power!"
@@ -1221,13 +1241,13 @@ def filepath():
         robot_brain = "Tug Bravo, pulled to 50% power!"
     elif "bravo" in text2 and "pull"  and "50" in text2 and "percent" in text2:
         robot_brain = "Tug Bravo, pulled to 50% power!"
-    elif "bravo" in text2 and "pull" and "half" and "power" in text2:
+    elif "bravo" in text2 and "pull" and "half" in text2 and "power" in text2:
         robot_brain = "Tug Bravo, pulled to half power!"
     elif "bravo" in text2 and "pull" and "25%" in text2:
         robot_brain = "Tug Bravo, pulled to 25% power!"
     elif "bravo" in text2 and "pull" and "25" in text2 and "percent" in text2:
         robot_brain = "Tug Bravo, pulled to 25% power!"
-    elif "bravo" in text2 and "pull" and "quarter" and "power" in text2:
+    elif "bravo" in text2 and "pull" and "quarter" in text2 and "power" in text2:
         robot_brain = "Tug Bravo, pulled to quarter power!"
     elif "bravo" in text2 and "pull" and "10%" in text2:
         robot_brain = "Tug Bravo, pulled to 10% power!"
@@ -1250,7 +1270,7 @@ def filepath():
         robot_brain = "Tug Alpha, pulled to 100% power!"
     elif "alpha" in text2 and "pull" and "100" in text2 and "percent" in text2:
         robot_brain = "Tug Alpha, pulled to 100% power!"
-    elif "alpha" in text2 and "pull" and "full" and "power" in text2:
+    elif "alpha" in text2 and "pull" and "full" in text2 and "power" in text2:
         robot_brain = "Tug Alpha, pulled to maximum power!"
     elif "alpha" in text2 and "pull" and "75%" in text2:
         robot_brain = "Tug Alpha, pulled to 75% power!"
@@ -1260,13 +1280,13 @@ def filepath():
         robot_brain = "Tug Alpha, pulled to 50% power!"
     elif "alpha" in text2 and "pull" and "50" in text2 and "percent" in text2:
         robot_brain = "Tug Alpha, pulled to 50% power!"
-    elif "alpha" in text2 and "pull" and "half" and "power" in text2:
+    elif "alpha" in text2 and "pull" and "half" in text2 and "power" in text2:
         robot_brain = "Tug Alpha, pulled to half power!"
     elif "alpha" in text2 and "pull" and "25%" in text2:
         robot_brain = "Tug Alpha, pulled to 25% power!"
     elif "alpha" in text2 and "pull" and "25" in text2 and "percent" in text2:
         robot_brain = "Tug Alpha, pulled to 25% power!"
-    elif "alpha" in text2 and "pull" and "quarter" and "power" in text2:
+    elif "alpha" in text2 and "pull" and "quarter" in text2 and "power" in text2:
         robot_brain = "Tug Alpha, pulled to quarter power!"
     elif "alpha" in text2 and "pull" and "10%" in text2:
         robot_brain = "Tug Alpha, pulled to 10% power!"
